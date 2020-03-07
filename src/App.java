@@ -10,6 +10,7 @@ public class App {
         int valor2 = 13;
 
         Calculadora calc = new Calculadora();
+
         Comparador comp = new Comparador();
         System.out.println("Somar "+valor1+" e "+valor2+" = "+calc.somar(valor1,valor2));
         System.out.println("Subtrair "+valor1+" e "+valor2+" = "+calc.subtrair(valor1,valor2));
