@@ -6,6 +6,10 @@ public class Aluno {
 
     float nota;
 
+    Aluno(){
+
+    }
+
     Aluno(String nome, float nota){
         this.nome = nome;
         this.nota = nota;
