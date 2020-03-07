@@ -11,17 +11,12 @@ public class Aluno {
         this.nota = nota;
     }
 
-    String situacao(float nota){
-        if(nota>=7.0){
-            return "Aprovado";
-        }
-        return "Reprovado";
-    }
+    Desempenho desempenho = new Desempenho();
 
     @Override
     public String toString() {
         return "Nome do aluno: "+this.nome+"\n" +
                 "Nota do aluno: "+this.nota+"\n" +
-                "Situação do aluno: "+situacao(this.nota);
+                "Situação do aluno: "+desempenho.situacao(this.nota);
     }
 }
