@@ -7,9 +7,9 @@ public class App {
 
     public static void main(String[] args) {
 
-        Aluno aluno4 = new Aluno();
-        
+
         //Trecho apenas para brincar
+        Aluno aluno4 = new Aluno();
         aluno4.nome = JOptionPane.showInputDialog("Por favor, escreva nome do aluno");
         aluno4.nota = Float.parseFloat(JOptionPane.showInputDialog("Por favor, escreva a nota do aluno"));
         JOptionPane.showMessageDialog(null,aluno4);
