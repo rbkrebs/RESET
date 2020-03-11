@@ -7,8 +7,12 @@ public class Personagem {
     Integer ataque;
     Integer defesa;
 
-    Personagem(){
 
+
+    public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
+        this.nome = nome;
+        this.vida = vida;
+        this.ataque = ataque;
+        this.defesa = defesa;
     }
-
 }
