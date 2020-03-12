@@ -22,4 +22,20 @@ public class Druidas extends Personagem {
         this.fe -= this.poderDivino.getCustoFe();
 
     }
+
+    @Override
+    public Integer atacar() {
+        return this.poderDivino.getIntensidade()*this.ataque;
+    }
+
+    @Override
+    public Integer receberAtaque(Integer ataque) {
+
+        return ataque - this.defesa;
+    }
+
+    @Override
+    public boolean estaVivo() {
+        return this.vida > 0;
+    }
 }

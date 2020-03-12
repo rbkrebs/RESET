@@ -11,4 +11,20 @@ public class Guerreiros extends Personagem {
         this.arma = arma;
 
     }
+
+    @Override
+    public Integer atacar() {
+        return this.arma.getIntensidade()*this.ataque;
+    }
+
+    @Override
+    public Integer receberAtaque(Integer ataque) {
+
+        return ataque - this.defesa;
+    }
+
+    @Override
+    public boolean estaVivo() {
+        return this.vida > 0;
+    }
 }

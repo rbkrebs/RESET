@@ -1,17 +1,12 @@
 package desafio_1;
 
-public class Ataque<T, U> {
+public interface Ataque {
 
-        T obj1;
-        U obj2;
+    public Integer atacar();
 
+    public Integer receberAtaque(Integer ataque);
 
-
-        void atacar (T atacante, T atacado){
-
-        }
-
-
+    public boolean estaVivo();
 
 
 }
