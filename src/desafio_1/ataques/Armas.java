@@ -12,6 +12,10 @@ public class Armas {
 
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public Integer getIntensidade() {
         return intensidade;
     }

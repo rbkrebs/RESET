@@ -19,13 +19,9 @@ public class Personagem implements Ataque {
     }
 
 
-    @Override
-    public Integer atacar() {
-            return null;
-    }
 
     @Override
-    public Integer receberAtaque(Integer ataque) {
+    public String atacar(Personagem atacado) {
         return null;
     }
 

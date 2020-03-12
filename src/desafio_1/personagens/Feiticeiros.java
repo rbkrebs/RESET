@@ -8,7 +8,7 @@ public class Feiticeiros extends Personagem {
 
     Magias magias;
 
-    Feiticeiros(String nome, Integer vida, Integer ataque, Integer defesa, Integer mana , Magias magias){
+    public Feiticeiros(String nome, Integer vida, Integer ataque, Integer defesa, Integer mana , Magias magias){
         super(nome, vida, ataque, defesa);
         this.mana = mana;
         this.magias = magias;
@@ -23,15 +23,16 @@ public class Feiticeiros extends Personagem {
     }
 
     @Override
-    public Integer atacar() {
-        return this.magias.getIntensidade()*this.ataque;
+    public String atacar(Personagem atacado) {
+        Integer poderDeAtaque = this.magias.getIntensidade()*this.ataque;
+        Integer dano = poderDeAtaque - this.defesa;
+        atacado.vida -= dano;
+
+        return this.nome+" atacou "+atacado.nome+" com "+this.magias.getNome()+" causando "+dano+" de dano";
+
     }
 
-    @Override
-    public Integer receberAtaque(Integer ataque) {
 
-        return ataque - this.defesa;
-    }
 
     @Override
     public boolean estaVivo() {

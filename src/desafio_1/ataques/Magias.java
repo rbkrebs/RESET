@@ -13,6 +13,10 @@ public class Magias {
         this.custoMana = custoMana;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public Integer getIntensidade() {
         return intensidade;
     }

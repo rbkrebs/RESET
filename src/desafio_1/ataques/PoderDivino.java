@@ -6,10 +6,14 @@ public class PoderDivino {
     Integer intensidade;
     Integer custoFe;
 
-    PoderDivino(String nome, Integer intensidade, Integer custoFe){
+    public PoderDivino(String nome, Integer intensidade, Integer custoFe){
         this.nome = nome;
         this.intensidade = intensidade;
         this.custoFe = custoFe;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public Integer getIntensidade() {

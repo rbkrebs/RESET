@@ -13,14 +13,12 @@ public class Guerreiros extends Personagem {
     }
 
     @Override
-    public Integer atacar() {
-        return this.arma.getIntensidade()*this.ataque;
-    }
+    public String atacar(Personagem atacado) {
+        Integer poderDeAtaque = this.arma.getIntensidade()*this.ataque;
+        Integer dano = poderDeAtaque - this.defesa;
+        atacado.vida -= dano;
 
-    @Override
-    public Integer receberAtaque(Integer ataque) {
-
-        return ataque - this.defesa;
+        return this.nome+" atacou "+atacado.nome+" com "+this.arma.getNome()+" causando "+dano+" de dano";
     }
 
     @Override

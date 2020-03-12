@@ -9,10 +9,11 @@ public class Druidas extends Personagem {
 
     PoderDivino poderDivino;
 
-    Druidas(String nome, Integer vida, Integer ataque, Integer defesa, Integer fe , PoderDivino poderDivino){
+    public Druidas(String nome, Integer vida, Integer ataque, Integer defesa, Integer fe , PoderDivino poderDivino){
         super(nome, vida, ataque, defesa);
         this.fe = fe;
         this.poderDivino = poderDivino;
+
 
 
     }
@@ -24,15 +25,14 @@ public class Druidas extends Personagem {
     }
 
     @Override
-    public Integer atacar() {
-        return this.poderDivino.getIntensidade()*this.ataque;
+    public String atacar(Personagem atacado) {
+        Integer poderDeAtaque = this.poderDivino.getIntensidade()*this.ataque;
+        Integer dano = poderDeAtaque - this.defesa;
+        atacado.vida -= dano;
+
+        return this.nome+" atacou "+atacado.nome+" com "+this.poderDivino.getNome()+" causando "+dano+" de dano";
     }
 
-    @Override
-    public Integer receberAtaque(Integer ataque) {
-
-        return ataque - this.defesa;
-    }
 
     @Override
     public boolean estaVivo() {

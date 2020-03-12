@@ -1,10 +1,11 @@
 package desafio_1;
 
-public interface Ataque {
+import desafio_1.personagens.Personagem;
 
-    public Integer atacar();
+public interface Ataque<T extends Personagem> {
 
-    public Integer receberAtaque(Integer ataque);
+    public String atacar(T atacado);
+
 
     public boolean estaVivo();
 
