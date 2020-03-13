@@ -22,16 +22,41 @@ public class Magos extends Personagem {
     }
     @Override
     public String atacar(Personagem atacado) {
-        Integer poderDeAtaque = this.magias.getIntensidade()*this.ataque;
-        Integer dano = poderDeAtaque - this.defesa;
-        atacado.vida -= dano;
+        if (this.estaVivo()){
+            Integer poderDeAtaque = this.magias.getIntensidade()*this.ataque;
+            Integer dano = Math.abs(poderDeAtaque - atacado.defesa);
 
-        return this.nome+" atacou "+atacado.nome+" com "+this.magias.getNome()+" causando "+dano+" de dano";
+            if (this.temFe()){
+                usaMagia();
+                atacado.vida -=  dano;
+                if (atacado.vida<=0){
+                    return atacado.nome + " faleceu!!";
+                }
+                return this.nome+" atacou "+atacado.nome+" com "+this.magias.getNome()+" causando "+dano+" de dano";
+            }
 
+            else{
+                return this.nome+" não tem mais fé";
+            }
+        }
+            return "";
+
+
+
+    }
+
+    public boolean temFe(){
+        return this.mana>=this.magias.getCustoMana();
     }
 
     @Override
     public boolean estaVivo() {
         return this.vida > 0;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\n"+
+                "Mana: "+String.valueOf(this.mana);
     }
 }

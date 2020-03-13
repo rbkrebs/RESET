@@ -14,11 +14,19 @@ public class Guerreiros extends Personagem {
 
     @Override
     public String atacar(Personagem atacado) {
-        Integer poderDeAtaque = this.arma.getIntensidade()*this.ataque;
-        Integer dano = poderDeAtaque - this.defesa;
-        atacado.vida -= dano;
+        if (this.estaVivo()) {
 
-        return this.nome+" atacou "+atacado.nome+" com "+this.arma.getNome()+" causando "+dano+" de dano";
+            Integer poderDeAtaque = this.arma.getIntensidade() * this.ataque;
+            Integer dano = Math.abs(poderDeAtaque - atacado.defesa);
+            atacado.vida -=  Math.abs(dano);
+            if (atacado.vida <= 0) {
+                return atacado.nome + " faleceu!!";
+            }
+            return this.nome + " atacou " + atacado.nome + " com " + this.arma.getNome() + " causando " + dano + " de dano";
+        }
+            return "";
+
+
     }
 
     @Override

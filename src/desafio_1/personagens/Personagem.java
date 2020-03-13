@@ -22,7 +22,7 @@ public class Personagem implements Ataque {
 
     @Override
     public String atacar(Personagem atacado) {
-        return null;
+        return "";
     }
 
     @Override
@@ -30,5 +30,9 @@ public class Personagem implements Ataque {
         return false;
     }
 
-
+    @Override
+    public String toString() {
+        return "\nNome:"+this.nome+"\n"+
+                "Vida: "+this.vida;
+    }
 }
