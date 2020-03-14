@@ -1,31 +1,31 @@
 package desafio_1.personagens;
 
-import desafio_1.ataques.Magias;
+import desafio_1.ataques.Magia;
 
-public class Feiticeiros extends Personagem {
+public class Feiticeiro extends Personagem {
 
     Integer mana;
 
-    Magias magias;
+    Magia magia;
 
-    public Feiticeiros(String nome, Integer vida, Integer ataque, Integer defesa, Integer mana , Magias magias){
+    public Feiticeiro(String nome, Integer vida, Integer ataque, Integer defesa, Integer mana , Magia magia){
         super(nome, vida, ataque, defesa);
         this.mana = mana;
-        this.magias = magias;
+        this.magia = magia;
 
 
     }
 
     void usaMagia(){
 
-        this.mana -= this.magias.getCustoMana();
+        this.mana -= this.magia.getCustoMana();
 
     }
 
     @Override
     public String atacar(Personagem atacado) {
         if (this.estaVivo()) {
-            Integer poderDeAtaque = this.magias.getIntensidade() * this.ataque;
+            Integer poderDeAtaque = this.magia.getIntensidade() * this.ataque;
             Integer dano = Math.abs(poderDeAtaque - atacado.defesa);
 
             if (this.temFe()) {
@@ -34,7 +34,7 @@ public class Feiticeiros extends Personagem {
                 if (atacado.vida <= 0) {
                     return atacado.nome + " faleceu!!";
                 }
-                return this.nome + " atacou " + atacado.nome + " com " + this.magias.getNome() + " causando " + dano + " de dano";
+                return this.nome + " atacou " + atacado.nome + " com " + this.magia.getNome() + " causando " + dano + " de dano";
             } else {
                 return this.nome + " não tem mais fé";
             }
@@ -45,7 +45,7 @@ public class Feiticeiros extends Personagem {
     }
 
     public boolean temFe(){
-        return this.mana>=this.magias.getCustoMana();
+        return this.mana>=this.magia.getCustoMana();
     }
 
 

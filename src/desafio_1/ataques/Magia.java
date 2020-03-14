@@ -1,12 +1,12 @@
 package desafio_1.ataques;
 
-public class Magias {
+public class Magia {
 
     String nome;
     Integer intensidade;
     Integer custoMana;
 
-    public Magias(String nome, Integer intesidade, Integer custoMana){
+    public Magia(String nome, Integer intesidade, Integer custoMana){
 
         this.nome = nome;
         this.intensidade = intesidade;

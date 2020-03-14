@@ -1,18 +1,16 @@
 package desafio_1.personagens;
 
-import desafio_1.ataques.Armas;
+import desafio_1.ataques.Arma;
 
-public class Barbaros extends Personagem {
+public class Guerreiro extends Personagem {
 
-    Armas arma;
+    Arma arma;
 
-
-    public Barbaros(String nome, Integer vida, Integer ataque, Integer defesa, Armas arma) {
+    public Guerreiro(String nome, Integer vida, Integer ataque, Integer defesa , Arma arma){
         super(nome, vida, ataque, defesa);
         this.arma = arma;
 
     }
-
 
     @Override
     public String atacar(Personagem atacado) {
@@ -31,13 +29,8 @@ public class Barbaros extends Personagem {
 
     }
 
-
-
-
     @Override
     public boolean estaVivo() {
         return this.vida > 0;
     }
-
-
 }

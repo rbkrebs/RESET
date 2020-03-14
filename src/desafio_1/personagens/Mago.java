@@ -1,29 +1,29 @@
 package desafio_1.personagens;
 
-import desafio_1.ataques.Magias;
+import desafio_1.ataques.Magia;
 
-public class Magos extends Personagem {
+public class Mago extends Personagem {
 
     Integer mana;
 
-    Magias magias;
+    Magia magia;
 
-    public Magos(String nome, Integer vida, Integer ataque, Integer defesa, Integer mana , Magias magias){
+    public Mago(String nome, Integer vida, Integer ataque, Integer defesa, Integer mana , Magia magia){
         super(nome, vida, ataque, defesa);
         this.mana = mana;
-        this.magias = magias;
+        this.magia = magia;
 
     }
 
     void usaMagia(){
 
-        this.mana -= this.magias.getCustoMana();
+        this.mana -= this.magia.getCustoMana();
 
     }
     @Override
     public String atacar(Personagem atacado) {
         if (this.estaVivo()){
-            Integer poderDeAtaque = this.magias.getIntensidade()*this.ataque;
+            Integer poderDeAtaque = this.magia.getIntensidade()*this.ataque;
             Integer dano = Math.abs(poderDeAtaque - atacado.defesa);
 
             if (this.temFe()){
@@ -32,7 +32,7 @@ public class Magos extends Personagem {
                 if (atacado.vida<=0){
                     return atacado.nome + " faleceu!!";
                 }
-                return this.nome+" atacou "+atacado.nome+" com "+this.magias.getNome()+" causando "+dano+" de dano";
+                return this.nome+" atacou "+atacado.nome+" com "+this.magia.getNome()+" causando "+dano+" de dano";
             }
 
             else{
@@ -46,7 +46,7 @@ public class Magos extends Personagem {
     }
 
     public boolean temFe(){
-        return this.mana>=this.magias.getCustoMana();
+        return this.mana>=this.magia.getCustoMana();
     }
 
     @Override
