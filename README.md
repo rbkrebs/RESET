@@ -1,1 +1,1 @@
-# Porjetos do Programa RESET da CWI
+# Projetos do Programa RESET da CWI
