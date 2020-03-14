@@ -20,6 +20,6 @@ public class Livro {
 
     @Override
     public String toString() {
-        return this.categoria+" - "+this.nome+"( "+this.autor+" ):"+this.status+"";
+        return this.categoria+" - "+this.nome+"("+this.autor+"):"+this.status+"";
     }
 }
