@@ -1,27 +1,22 @@
 package desafio_1.ataques;
 
-public class Magia {
+public class Magia extends PoderFerramenta {
 
-    String nome;
-    Integer intensidade;
-    Integer custoMana;
 
-    public Magia(String nome, Integer intesidade, Integer custoMana){
+    Double custoMana;
 
-        this.nome = nome;
-        this.intensidade = intesidade;
+    public Magia(String nome, Double intensidade, Double custoMana) {
+        super(nome, intensidade);
         this.custoMana = custoMana;
+
     }
 
-    public String getNome() {
-        return nome;
-    }
 
-    public Integer getIntensidade() {
-        return intensidade;
-    }
 
-    public Integer getCustoMana() {
+
+
+
+    public Double getCustoMana() {
         return custoMana;
     }
 }

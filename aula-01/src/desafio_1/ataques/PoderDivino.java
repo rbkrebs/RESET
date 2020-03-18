@@ -1,26 +1,18 @@
 package desafio_1.ataques;
 
-public class PoderDivino {
+public class PoderDivino extends PoderFerramenta {
 
-    String nome;
-    Integer intensidade;
-    Integer custoFe;
 
-    public PoderDivino(String nome, Integer intensidade, Integer custoFe){
-        this.nome = nome;
-        this.intensidade = intensidade;
+    Double custoFe;
+
+    public PoderDivino(String nome, Double intensidade, Double custoFe) {
+        super(nome, intensidade);
         this.custoFe = custoFe;
     }
 
-    public String getNome() {
-        return nome;
-    }
 
-    public Integer getIntensidade() {
-        return intensidade;
-    }
-
-    public Integer getCustoFe() {
+    public Double getCustoFe() {
         return custoFe;
     }
+
 }

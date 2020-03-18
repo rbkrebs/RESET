@@ -4,12 +4,14 @@ import desafio_1.ataques.Arma;
 import desafio_1.ataques.Magia;
 import desafio_1.ataques.PoderDivino;
 import desafio_1.personagens.*;
+import desafio_1.personagens.burro_forte.Barbaro;
+import desafio_1.personagens.burro_forte.Guerreiro;
 
 public class App {
 
     public static void main(String[] args) {
 
-        Arma arma1 = new Arma("Canivete", 7);
+      /*  Arma arma1 = new Arma("Canivete", 7);
         Arma arma2 = new Arma("Machado", 5);
         Magia magia1 = new Magia("foguete azul", 5, 36);
         Magia magia2 = new Magia("lua de cristal", 9, 76);
@@ -55,7 +57,9 @@ public class App {
         System.out.println(f1);
         System.out.println(f2);
         System.out.println(c1);
-        System.out.println(c2);
+        System.out.println(c2);*/
+
+
 
 
 

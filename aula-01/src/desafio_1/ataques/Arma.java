@@ -1,22 +1,9 @@
 package desafio_1.ataques;
 
-public class Arma {
+public class Arma extends PoderFerramenta {
 
-    String nome;
-    Integer intensidade;
 
-    public Arma(String nome, Integer intensidade){
-
-        this.nome = nome;
-        this.intensidade = intensidade;
-
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public Integer getIntensidade() {
-        return intensidade;
+    public Arma(String nome, Double intensidade) {
+        super(nome, intensidade);
     }
 }
