@@ -27,9 +27,7 @@ public class Menu {
         for (Personagem personagem: this.listaPersonagens){
             menu += listaPersonagens.indexOf(personagem) +" - " + personagem.mostrarTipo()+"\n";
         }
-
         return menu;
-
     }
 
 

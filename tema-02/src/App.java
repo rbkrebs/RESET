@@ -63,10 +63,11 @@ public class App {
 
 
         Menu menu = new Menu();
+        Jogador jogador = new Jogador();
         System.out.println(menu.mostrarMenu());
         Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
-        System.out.println(menu.getListaPersonagens().get(i));
+        jogador.criarPersonagens(menu.getListaPersonagens().get(i));
 
 
 

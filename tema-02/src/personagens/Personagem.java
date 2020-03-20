@@ -9,7 +9,6 @@ public abstract class Personagem {
     private Double vida;
     private Double ataque;
     private Double defesa;
-    private Double poderDeAtaque;
 
     public Personagem(){
 
@@ -22,39 +21,39 @@ public abstract class Personagem {
         this.defesa = defesa;
     }
 
-    protected String getNome() {
+    public String getNome() {
         return nome;
     }
 
-    protected void setNome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    protected Double getVida() {
+    public Double getVida() {
         return vida;
     }
 
-    protected void setVida(Double vida) {
+    public void setVida(Double vida) {
         this.vida = vida;
     }
 
-    protected Double getAtaque() {
+    public Double getAtaque() {
         return ataque;
     }
 
-    protected void setAtaque(Double ataque) {
+    public void setAtaque(Double ataque) {
         this.ataque = ataque;
     }
 
-    protected Double getDefesa() {
+    public Double getDefesa() {
         return defesa;
     }
 
-    protected void setDefesa(Double defesa) {
+    public void setDefesa(Double defesa) {
         this.defesa = defesa;
     }
 
-    protected String atacar(Personagem atacado, PoderFerramenta poderFerramenta){
+    public String atacar(Personagem atacado, PoderFerramenta poderFerramenta){
 
 
         Double poderDeAtaque = poderFerramenta.getIntensidade() * this.getAtaque();
@@ -74,18 +73,18 @@ public abstract class Personagem {
     }
 
 
-    protected void atualizaVida(Personagem atacado, Double dano) {
+    public void atualizaVida(Personagem atacado, Double dano) {
         atacado.setVida((atacado.getVida()- Math.abs(dano)));
     }
 
-    protected Double verificarDano(Double poderDeAtaque, Double defesa) {
+    public Double verificarDano(Double poderDeAtaque, Double defesa) {
         return Math.abs(poderDeAtaque - defesa);
     }
 
 
 
 
-    protected boolean estaVivo() {
+    public boolean estaVivo() {
         return this.getVida()>0;
     }
 

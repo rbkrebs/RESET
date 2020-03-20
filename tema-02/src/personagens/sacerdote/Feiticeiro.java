@@ -22,7 +22,7 @@ public class Feiticeiro extends Sacerdote {
 
     @Override
     public String mostrarTipo() {
-        return "Sacerdote";
+        return "Feiticeiro";
     }
 
 }

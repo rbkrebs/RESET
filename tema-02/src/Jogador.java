@@ -1,6 +1,7 @@
-package desafio_1;
 
 import personagens.Personagem;
+import personagens.arcano.Arcano;
+import personagens.sacerdote.Sacerdote;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,27 +10,35 @@ public class Jogador {
 
 
 
-    private Integer NUMERO_CLASSES = 6;
-    private ArrayList<Personagem> listaPersonagens = null;
+
+    private ArrayList<Object> listaPersonagens = null;
 
 
-    public void criarPersonagens(){
+    public void criarPersonagens(Personagem personagem){
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Nome do personagem: ");
+        personagem.setNome(scanner.next());
+        System.out.print("Vida: ");
+        personagem.setVida(scanner.nextDouble());
+        System.out.print("Ataque: ");
+        personagem.setAtaque(scanner.nextDouble());
+        System.out.print("Defesa: ");
+        personagem.setDefesa(scanner.nextDouble());
 
-        if (this.listaPersonagens.size()>0){
-            while (this.listaPersonagens.size()<this.NUMERO_CLASSES){
 
-                System.out.println("Nome do personagem");
-
-
-            }
+        if (( personagem instanceof Sacerdote)){
+            System.out.print("Mana: ");
+            ((Sacerdote) personagem).setMana(scanner.nextDouble());
         }
-        else {
-            System.out.println("tahokey");
-            return;
+        else if(personagem instanceof Arcano){
+            System.out.print("Fe: ");
+            ((Arcano) personagem).setFe(scanner.nextDouble());
         }
+
+
+
 
 
 

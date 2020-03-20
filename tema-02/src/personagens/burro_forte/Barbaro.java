@@ -15,6 +15,6 @@ public class Barbaro extends BurroForte {
 
     @Override
     public String mostrarTipo() {
-        return "Bárbarop";
+        return "Bárbaro";
     }
 }
