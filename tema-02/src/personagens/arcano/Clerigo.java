@@ -1,7 +1,7 @@
-package desafio_1.personagens.arcano;
+package personagens.arcano;
 
-import desafio_1.ataques.PoderDivino;
-import desafio_1.personagens.Personagem;
+import ataques.PoderDivino;
+import personagens.Personagem;
 
 public class Clerigo extends Arcano {
 

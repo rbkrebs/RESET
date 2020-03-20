@@ -1,12 +1,11 @@
-package desafio_1;
 
-import desafio_1.personagens.Personagem;
-import desafio_1.personagens.arcano.Clerigo;
-import desafio_1.personagens.arcano.Druida;
-import desafio_1.personagens.burro_forte.Barbaro;
-import desafio_1.personagens.burro_forte.Guerreiro;
-import desafio_1.personagens.sacerdote.Feiticeiro;
-import desafio_1.personagens.sacerdote.Mago;
+import personagens.Personagem;
+import personagens.arcano.Clerigo;
+import personagens.arcano.Druida;
+import personagens.burro_forte.Barbaro;
+import personagens.burro_forte.Guerreiro;
+import personagens.sacerdote.Feiticeiro;
+import personagens.sacerdote.Mago;
 
 import java.util.ArrayList;
 

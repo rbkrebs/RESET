@@ -1,7 +1,7 @@
-package desafio_1.personagens;
+package personagens;
 
 
-import desafio_1.ataques.PoderFerramenta;
+import ataques.PoderFerramenta;
 
 public abstract class Personagem {
 

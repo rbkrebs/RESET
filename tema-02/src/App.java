@@ -1,11 +1,11 @@
-package desafio_1;
 
-import desafio_1.ataques.Arma;
-import desafio_1.ataques.Magia;
-import desafio_1.ataques.PoderDivino;
-import desafio_1.personagens.*;
-import desafio_1.personagens.burro_forte.Barbaro;
-import desafio_1.personagens.burro_forte.Guerreiro;
+
+import ataques.Arma;
+import ataques.Magia;
+import ataques.PoderDivino;
+import personagens.*;
+import personagens.burro_forte.Barbaro;
+import personagens.burro_forte.Guerreiro;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
 package desafio_1;
 
-import desafio_1.personagens.Personagem;
+import personagens.Personagem;
 
 import java.util.ArrayList;
 import java.util.Scanner;

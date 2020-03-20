@@ -1,7 +1,7 @@
-package desafio_1.personagens.sacerdote;
+package personagens.sacerdote;
 
-import desafio_1.ataques.Magia;
-import desafio_1.personagens.Personagem;
+import ataques.Magia;
+import personagens.Personagem;
 
 public abstract class Sacerdote extends Personagem {
 

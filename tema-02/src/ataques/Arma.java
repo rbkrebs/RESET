@@ -1,4 +1,4 @@
-package desafio_1.ataques;
+package ataques;
 
 public class Arma extends PoderFerramenta {
 
