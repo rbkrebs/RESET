@@ -159,7 +159,7 @@ public class Jogador {
                     System.out.println("Opção errada!");
 
             }
-        
+
         }while (!(this.listaPoderFerramentas.get(this.iOpcao) instanceof BurroForte));
 
 
