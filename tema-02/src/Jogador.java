@@ -1,9 +1,11 @@
 
+import ataques.Arma;
 import ataques.Magia;
 import ataques.PoderDivino;
 import ataques.PoderFerramenta;
 import personagens.Personagem;
 import personagens.arcano.Arcano;
+import personagens.burro_forte.BurroForte;
 import personagens.sacerdote.Sacerdote;
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ public class Jogador {
 
 
     private Menu menu = new Menu();
+    private Batalha batalha = new Batalha();
     private ArrayList<Object> listaPersonagens = new ArrayList<>();
     private ArrayList<Object> listaPoderFerramentas = new ArrayList<>();
     private static final String perguntaPersonagem = "Deseja criar mais um personagem?\n"+
@@ -25,16 +28,18 @@ public class Jogador {
             "1 - Não\n"+
             "Resposta: ";
     private Integer resposta;
+    private Scanner scanner = new Scanner(System.in);
+    private Integer iOpcao;
 
 
     public void criarPersonagens(){
 
 
         do {
-            Scanner scanner = new Scanner(System.in);
+
             System.out.println(this.menu.mostrarMenuPersonagem());
-            int iPersonagem = scanner.nextInt();
-            Personagem personagem = menu.getListaPersonagens().get(iPersonagem);
+            this.iOpcao = scanner.nextInt();
+            Personagem personagem = menu.getListaPersonagens().get(this.iOpcao);
 
             System.out.print("Nome do personagem: ");
             personagem.setNome(scanner.next());
@@ -74,10 +79,10 @@ public class Jogador {
 
         System.out.println("Bora criar umas armas!!!\n");
         do {
-            Scanner scanner = new Scanner(System.in);
+
             System.out.println(this.menu.mostrarMenuArma());
-            int iArma = scanner.nextInt();
-            PoderFerramenta poderFerramenta = menu.getListaPoderFerramenta().get(iArma);
+            this.iOpcao = scanner.nextInt();
+            PoderFerramenta poderFerramenta = menu.getListaPoderFerramenta().get(this.iOpcao);
 
             System.out.print("Nome da arma: ");
             poderFerramenta.setNome(scanner.next());
@@ -103,19 +108,59 @@ public class Jogador {
 
         }while (this.resposta == 0);
 
+    this.iniciarBatalha();
 
-        // para testes
-        for (Object p: listaPersonagens){
-            System.out.println(p);
-        }
+    }
 
-        for (Object p: listaPoderFerramentas){
-            System.out.println(p);
-        }
+    public void iniciarBatalha(){
 
+        do {
+            this.menu.mostrarMenuBatalha();
 
+            this.iOpcao = scanner.nextInt();
 
+            switch (iOpcao) {
+                case 1:
+                    this.equipar();
+                    break;
+                case 2:
+                    this.batalha.atacar();
+                    break;
+            }
 
+        }while (this.iOpcao!=3);
+
+    }
+
+    public void equipar(){
+
+        do {
+            System.out.println("Escolha qual Homem de Arma você quer equipar");
+            for(Object personagem: listaPersonagens){
+                if(personagem instanceof BurroForte){
+                    System.out.println(this.listaPersonagens.indexOf(personagem)+" - "+((BurroForte) personagem).getNome());
+                }
+                else
+                    System.out.println("Opção errada!");
+
+            }
+
+        }while (!(this.listaPersonagens.get(this.iOpcao) instanceof BurroForte));
+
+        this.iOpcao = scanner.nextInt();
+
+        do {
+            System.out.println("Escolha qual uma arma para equipar");
+            for(Object arma: listaPoderFerramentas){
+                if(arma instanceof Arma){
+                    System.out.println(this.listaPoderFerramentas.indexOf(arma)+" - "+((Arma) arma).getNome());
+                }
+                else
+                    System.out.println("Opção errada!");
+
+            }
+        
+        }while (!(this.listaPoderFerramentas.get(this.iOpcao) instanceof BurroForte));
 
 
     }

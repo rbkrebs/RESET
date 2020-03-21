@@ -58,6 +58,16 @@ public class Menu {
         return menu + "Resposta: ";
     }
 
+    public String mostrarMenuBatalha(){
+
+      String menu = "Bora começar a brincadeira. Escolha umas das opções a seguir:\n"+
+              "1 - Equipar\n"+
+              "2 - Atacar\n"+
+              "3 - Encerrar";
+
+        return menu + "Resposta: ";
+    }
+
 
 
     public ArrayList<Personagem> getListaPersonagens() {

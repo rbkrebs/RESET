@@ -64,7 +64,9 @@ public class App {
 
 
         Jogador jogador = new Jogador();
+
         jogador.criarPersonagens();
+
 
 
 
