@@ -54,12 +54,22 @@ public class CalculadoraFolhaMensal {
 			}
 		}
 		// Calculo da folha mensal
+		System.out.println(calcularFolhaMensal(funcionarioList));
 
 	}
 
 	private static int lerInteiro() {
 		Scanner scanner = new Scanner(System.in);
 		return scanner.nextInt();
+	}
+
+	private static String calcularFolhaMensal(List<Funcionario> funcionarioList) {
+		double pagamentos = 0;
+		for (Funcionario f: funcionarioList){
+			pagamentos += f.getRemuneracaoMensal();
+		}
+
+		return "Folha Mensal: "+pagamentos;
 	}
 
 	private static void imprimeMenu() {
