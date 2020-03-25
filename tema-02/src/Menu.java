@@ -7,6 +7,7 @@ import personagens.Personagem;
 import personagens.arcano.Clerigo;
 import personagens.arcano.Druida;
 import personagens.burro_forte.Barbaro;
+import personagens.burro_forte.BurroForte;
 import personagens.burro_forte.Guerreiro;
 import personagens.sacerdote.Feiticeiro;
 import personagens.sacerdote.Mago;
@@ -66,6 +67,20 @@ public class Menu {
               "3 - Encerrar";
 
         return menu + "Resposta: ";
+    }
+
+    public void mostrarMenuEquipar(ArrayList listaPersonagens){
+
+        System.out.print("Escolha qual Homem de Arma você quer equipar: ");
+        for(Object personagem: listaPersonagens){
+            if(personagem instanceof BurroForte){
+                System.out.println(this.listaPersonagens.indexOf(personagem)+" - "+((BurroForte) personagem).getNome());
+            }
+            else
+                System.out.println(" Ops!! Você não tem nenhum Homem de Arma na sua lista!");
+
+        }
+
     }
 
 

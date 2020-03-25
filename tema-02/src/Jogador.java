@@ -5,6 +5,7 @@ import ataques.PoderDivino;
 import ataques.PoderFerramenta;
 import personagens.Personagem;
 import personagens.arcano.Arcano;
+import personagens.burro_forte.Barbaro;
 import personagens.burro_forte.BurroForte;
 import personagens.sacerdote.Sacerdote;
 
@@ -60,6 +61,7 @@ public class Jogador {
             }
 
             listaPersonagens.add(personagem);
+            System.out.println(listaPersonagens);
             System.out.println(perguntaPersonagem);
             this.resposta = scanner.nextInt();
 
@@ -92,7 +94,7 @@ public class Jogador {
 
             if ((poderFerramenta instanceof Magia)) {
 
-                System.out.print(" Custo de mana;: ");
+                System.out.print("Custo de mana: ");
                 ((Magia) poderFerramenta).setCustoMana(scanner.nextDouble());
 
             } else if (poderFerramenta instanceof PoderDivino) {
@@ -114,8 +116,11 @@ public class Jogador {
 
     public void iniciarBatalha(){
 
+
         do {
-            this.menu.mostrarMenuBatalha();
+
+
+            System.out.println(this.menu.mostrarMenuBatalha());
 
             this.iOpcao = scanner.nextInt();
 
@@ -134,20 +139,14 @@ public class Jogador {
 
     public void equipar(){
 
-        do {
-            System.out.println("Escolha qual Homem de Arma você quer equipar");
-            for(Object personagem: listaPersonagens){
-                if(personagem instanceof BurroForte){
-                    System.out.println(this.listaPersonagens.indexOf(personagem)+" - "+((BurroForte) personagem).getNome());
-                }
-                else
-                    System.out.println("Opção errada!");
 
-            }
+
+        do {
+            this.menu.mostrarMenuEquipar(this.listaPersonagens);
 
         }while (!(this.listaPersonagens.get(this.iOpcao) instanceof BurroForte));
 
-        this.iOpcao = scanner.nextInt();
+
 
         do {
             System.out.println("Escolha qual uma arma para equipar");
@@ -156,9 +155,10 @@ public class Jogador {
                     System.out.println(this.listaPoderFerramentas.indexOf(arma)+" - "+((Arma) arma).getNome());
                 }
                 else
-                    System.out.println("Opção errada!");
+                    System.out.println("Ops!! Você não tem nenhuma arma na sua lista!");
 
             }
+            this.iOpcao = scanner.nextInt();
 
         }while (!(this.listaPoderFerramentas.get(this.iOpcao) instanceof BurroForte));
 

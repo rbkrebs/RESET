@@ -9,6 +9,8 @@ public abstract class Personagem {
     private Double vida;
     private Double ataque;
     private Double defesa;
+    private static int numeroPersonagens = 0;
+
 
     public Personagem(){
 
@@ -19,6 +21,7 @@ public abstract class Personagem {
         this.vida = vida;
         this.ataque = ataque;
         this.defesa = defesa;
+        numeroPersonagens++;
     }
 
     public String getNome() {
@@ -88,7 +91,9 @@ public abstract class Personagem {
         return this.getVida()>0;
     }
 
-
+    public static int getNumeroPersonagens() {
+        return numeroPersonagens;
+    }
 
     @Override
     public String toString() {

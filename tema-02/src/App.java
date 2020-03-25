@@ -66,6 +66,7 @@ public class App {
         Jogador jogador = new Jogador();
 
         jogador.criarPersonagens();
+        System.out.println(Personagem.getNumeroPersonagens());
 
 
 

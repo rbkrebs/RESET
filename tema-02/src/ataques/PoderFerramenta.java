@@ -2,8 +2,10 @@ package ataques;
 
 public class PoderFerramenta {
 
-    String nome;
-    Double intensidade;
+    private String nome;
+    private Double intensidade;
+    private static Integer numeroPoderFerramentas = 0;
+
 
     public PoderFerramenta(){
 
@@ -13,6 +15,7 @@ public class PoderFerramenta {
 
         this.nome = nome;
         this.intensidade = intensidade;
+        numeroPoderFerramentas++;
 
     }
 
@@ -34,6 +37,10 @@ public class PoderFerramenta {
 
     public String mostrarTipo(){
         return "";
+    }
+
+    public static Integer getNumeroPoderFerramentas() {
+        return numeroPoderFerramentas;
     }
 }
 

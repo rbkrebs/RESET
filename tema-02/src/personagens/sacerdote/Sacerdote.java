@@ -17,7 +17,6 @@ public abstract class Sacerdote extends Personagem {
         super(nome, vida, ataque, defesa);
         this.mana = mana;
         this.magia = magia;
-
     }
 
     public Double getMana() {
