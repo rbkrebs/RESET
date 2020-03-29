@@ -5,7 +5,7 @@ import br.com.cwi.tinderevolution.domain.Music;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MusicCollection {
+public class MusicCollection  {
 
     private static int counter = 1;
     private static final List<Music> listMusic = new ArrayList<>();
@@ -35,12 +35,14 @@ public class MusicCollection {
     }
 
 
-    public Music update(int id, Music newMusic) {
+    public Music update(int id, Music newMusic){
+
 
         Music music = findById(id);
         music.setAutor(newMusic.getAutor());
         music.setDataDeLancamento(newMusic.getDataDeLancamento());
         music.setNome(newMusic.getNome());
+        music.setMusicSyles(newMusic.getMusicSyles());
 
         return music;
     }

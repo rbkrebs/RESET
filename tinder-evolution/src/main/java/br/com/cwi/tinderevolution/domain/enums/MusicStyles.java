@@ -1,3 +1,5 @@
+package br.com.cwi.tinderevolution.domain.enums;
+
 public enum MusicStyles {
 
     SERTANEJO("Sertanejo"), ROCK("Rock"),
@@ -12,5 +14,12 @@ public enum MusicStyles {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    @Override
+    public String toString() {
+        return "Music Styles{" +
+                "descricao='" + descricao + '\'' +
+                '}';
     }
 }
