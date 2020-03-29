@@ -1,4 +1,4 @@
-public enum EstilosMusicais {
+public enum MusicStyles {
 
     SERTANEJO("Sertanejo"), ROCK("Rock"),
     SAMBA("Samba"), PAGODE("Pagode"),
@@ -6,7 +6,7 @@ public enum EstilosMusicais {
 
     private String descricao;
 
-    EstilosMusicais(String descricao){
+    MusicStyles(String descricao){
         this.descricao = descricao;
     }
 
