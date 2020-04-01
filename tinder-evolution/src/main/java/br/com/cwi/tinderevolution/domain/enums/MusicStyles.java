@@ -3,8 +3,8 @@ package br.com.cwi.tinderevolution.domain.enums;
 public enum MusicStyles {
 
     SERTANEJO("Sertanejo"), ROCK("Rock"),
-    SAMBA("Samba"), PAGODE("Pagode"),
-    ELETRONICA("Eletronica"), CLASSICA("Classica");
+    INDIE("Indie"), PAGODE("Pagode"),
+    METAL("Metal");
 
     private String descricao;
 

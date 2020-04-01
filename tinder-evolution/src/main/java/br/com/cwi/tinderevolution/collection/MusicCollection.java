@@ -29,14 +29,12 @@ public class MusicCollection  {
             return this.listMusic.stream().filter(music-> music.getId() == id).findFirst().get();
         }
 
-        throw new NullPointerException("Não há cadastros na lista");
+        return null;
 
 
     }
 
     public Music findByName(String nomeMusica) {
-        System.out.println(nomeMusica);
-        System.out.println(this.listMusic.stream().filter(music-> music.getNome().equals(nomeMusica)).findFirst().get());
 
         return this.listMusic.stream().filter(music-> music.getNome().equals(nomeMusica)).findFirst().get();
 
