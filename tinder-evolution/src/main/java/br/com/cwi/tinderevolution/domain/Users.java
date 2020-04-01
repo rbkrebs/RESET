@@ -21,7 +21,7 @@ public class Users {
     private LocalDate dateOfBirth;
     @NotNull(message = "o campo bio é obrigatório")
     private String bio;
-    @NotNull(message = "o campo localizaçãoé obrigatório")
+    @NotNull(message = "o campo localização é obrigatório")
     private Localizacao localizacao;
 
     public int getId() {

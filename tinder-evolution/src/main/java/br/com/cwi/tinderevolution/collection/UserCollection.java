@@ -29,6 +29,12 @@ public class UserCollection {
 
     }
 
+    public Users findByEmail(String email) {
+
+        return this.listUsers.stream().filter(user-> user.getEmail().equals(email)).findFirst().get();
+
+    }
+
 
     public boolean delete(int id) {
         return false;

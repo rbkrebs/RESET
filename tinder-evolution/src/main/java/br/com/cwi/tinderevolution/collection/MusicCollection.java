@@ -25,11 +25,9 @@ public class MusicCollection  {
 
     public Music findById(int id) {
 
-        if(validar()){
-            return this.listMusic.stream().filter(music-> music.getId() == id).findFirst().get();
-        }
 
-        return null;
+            return this.listMusic.stream().filter(music-> music.getId() == id).findFirst().get();
+
 
 
     }
@@ -58,7 +56,5 @@ public class MusicCollection  {
         return music;
     }
 
-    private boolean validar(){
-        return listMusic.size()>0;
-    }
+
 }
