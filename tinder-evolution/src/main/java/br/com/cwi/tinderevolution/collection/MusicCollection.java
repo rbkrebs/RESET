@@ -25,7 +25,20 @@ public class MusicCollection  {
 
     public Music findById(int id) {
 
-        return this.listMusic.stream().filter(music-> music.getId() == id).findFirst().get();
+        if(validar()){
+            return this.listMusic.stream().filter(music-> music.getId() == id).findFirst().get();
+        }
+
+        throw new NullPointerException("Não há cadastros na lista");
+
+
+    }
+
+    public Music findByName(String nomeMusica) {
+        System.out.println(nomeMusica);
+        System.out.println(this.listMusic.stream().filter(music-> music.getNome().equals(nomeMusica)).findFirst().get());
+
+        return this.listMusic.stream().filter(music-> music.getNome().equals(nomeMusica)).findFirst().get();
 
     }
 
@@ -45,5 +58,9 @@ public class MusicCollection  {
         music.setMusicSyles(newMusic.getMusicSyles());
 
         return music;
+    }
+
+    private boolean validar(){
+        return listMusic.size()>0;
     }
 }

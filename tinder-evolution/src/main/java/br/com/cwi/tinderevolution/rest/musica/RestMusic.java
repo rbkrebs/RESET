@@ -3,20 +3,18 @@ package br.com.cwi.tinderevolution.rest.musica;
 
 import br.com.cwi.tinderevolution.collection.MusicCollection;
 import br.com.cwi.tinderevolution.domain.Music;
-import br.com.cwi.tinderevolution.gerenciamento.Gerenciamento;
+import br.com.cwi.tinderevolution.gerenciamento.GerenciamentoMusica;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/music")
-public class RestMusic {
+public class RestMusic  {
 
     MusicCollection musicCollection = new MusicCollection();
-    Gerenciamento gerenciamento = new Gerenciamento();
+    GerenciamentoMusica gerenciamentoMusica = new GerenciamentoMusica();
 
     @GetMapping("{id}")
     public Music findById(@PathVariable("id") int id){
@@ -38,9 +36,9 @@ public class RestMusic {
     }
 
     @PostMapping
-    public Music create(@Validated @RequestBody Music newMusic){
+    public Music create(@Validated @RequestBody Music newMusic) {
 
-       return this.gerenciamento.save(newMusic);
+       return this.gerenciamentoMusica.save(newMusic);
 
     }
 }
