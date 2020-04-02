@@ -1,4 +1,4 @@
-package br.com.cwi.tinderevolution.rest.musica;
+package br.com.cwi.tinderevolution.rest;
 
 
 import br.com.cwi.tinderevolution.collection.MusicCollection;

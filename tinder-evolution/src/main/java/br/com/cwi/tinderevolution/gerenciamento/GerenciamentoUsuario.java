@@ -34,7 +34,7 @@ public class GerenciamentoUsuario {
         }
         if (user.isPresent()) {
 
-            throw new IllegalArgumentException("Música já cadastrada");
+            throw new IllegalArgumentException("Email já cadastrada");
         }
 
         return true;
@@ -46,7 +46,7 @@ public class GerenciamentoUsuario {
         if (Period.between(userParam.getDateOfBirth(), LocalDate.now()).getYears()>18) {
             return true;
         }
-
+        System.out.println(Period.between(userParam.getDateOfBirth(), LocalDate.now()).getYears());
         throw new IllegalArgumentException("Cadastro permitido apenas para usuários maiores de 18 anos");
 
     }

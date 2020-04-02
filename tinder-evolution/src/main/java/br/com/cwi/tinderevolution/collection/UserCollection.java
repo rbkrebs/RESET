@@ -48,7 +48,8 @@ public class UserCollection {
         user.setBio(newUsers.getBio());
         user.setDateOfBirth(newUsers.getDateOfBirth());
         user.setEmail(newUsers.getEmail());
-        user.setLocalizacao(newUsers.getLocalizacao());
+        user.setLatitude(newUsers.getLatitude());
+        user.setLongitude(newUsers.getLongitude());
         user.setName(newUsers.getName());
         user.setPhone(newUsers.getPhone());
         return user;

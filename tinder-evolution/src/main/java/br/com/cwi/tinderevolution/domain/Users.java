@@ -21,8 +21,10 @@ public class Users {
     private LocalDate dateOfBirth;
     @NotNull(message = "o campo bio é obrigatório")
     private String bio;
-    @NotNull(message = "o campo localização é obrigatório")
-    private Localizacao localizacao;
+    @NotNull(message = "o campo latitude é obrigatório")
+    private double latitude;
+    @NotNull(message = "o campo longitude é obrigatório")
+    private double longitude;
 
     public int getId() {
         return id;
@@ -72,23 +74,33 @@ public class Users {
         this.bio = bio;
     }
 
-    public Localizacao getLocalizacao() {
-        return localizacao;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLocalizacao(Localizacao localizacao) {
-        this.localizacao = localizacao;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     @Override
     public String toString() {
         return "Users{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", bio='" + bio + '\'' +
-                ", localizacao=" + localizacao +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
                 '}';
     }
 }
