@@ -1,7 +1,5 @@
 package br.com.cwi.tinderevolution.domain;
 
-import br.com.cwi.tinderevolution.domain.enums.Localizacao;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
