@@ -52,7 +52,7 @@ public class GameCollection {
         game.setDataDeLancamento(newGame.getDataDeLancamento());
         game.setNome(newGame.getNome());
         game.setCategoria(newGame.getCategoria());
-        
+
 
         return game;
     }

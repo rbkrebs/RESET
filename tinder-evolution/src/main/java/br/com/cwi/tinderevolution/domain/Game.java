@@ -1,5 +1,6 @@
 package br.com.cwi.tinderevolution.domain;
 
+import br.com.cwi.tinderevolution.domain.enums.Category;
 import br.com.cwi.tinderevolution.domain.enums.Platform;
 
 import javax.validation.constraints.NotNull;
@@ -11,12 +12,14 @@ public class Game{
 
     @NotNull(message = "o campo nome é obrigatório")
     private String nome;
-    @NotNull(message = "o campo publisher é obrigatório")
+
     private String publisher;
     @NotNull(message = "o campo data de lançamento é obrigatório")
     private LocalDate dataDeLancamento;
     @NotNull(message = "o campo categoria é obrigatório")
-    private Platform categoria;
+    private Category categoria;
+    @NotNull(message = "o campo plataforma é obrigatório")
+    private Platform platform;
 
     public int getId() {
         return id;
@@ -50,15 +53,21 @@ public class Game{
         this.dataDeLancamento = dataDeLancamento;
     }
 
-    public Platform getCategoria() {
+    public Category getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Platform categoria) {
+    public void setCategoria(Category categoria) {
         this.categoria = categoria;
     }
 
+    public Platform getPlatform() {
+        return platform;
+    }
 
+    public void setPlatform(Platform platform) {
+        this.platform = platform;
+    }
 
     @Override
     public String toString() {
@@ -67,7 +76,9 @@ public class Game{
                 ", nome='" + nome + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", dataDeLancamento=" + dataDeLancamento +
-                ", categoria=" + categoria + '}';
+                ", categoria=" + categoria +
+                ", platform=" + platform +
+                '}';
     }
 }
 
