@@ -15,7 +15,7 @@ public class GerenciamentoGame {
 
     public Game save(Game game) throws IllegalArgumentException {
 
-        if (verificaRegistroDuplicado(game) && verificaDataRegistro(game) && verificaEstilos(game)) {
+        if (verificaRegistroDuplicado(game) && verificaDataRegistro(game) && verificaEstilos(game) && verificaPlataforma(game)) {
 
             return this.gameCollection.save(game);
         }
