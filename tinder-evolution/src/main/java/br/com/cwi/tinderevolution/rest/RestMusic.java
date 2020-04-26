@@ -22,7 +22,7 @@ public class RestMusic  {
 
     @GetMapping("{id}")
     @ApiOperation(value = "Retorna uma música")
-    public Music findById(@PathVariable("id") int id){
+    public Music findById(@PathVariable("id") Integer id){
 
 
         return this.musicCollection.findById(id);
@@ -37,7 +37,7 @@ public class RestMusic  {
 
     @PutMapping("{id}")
     @ApiOperation(value = "Altera o cadastro de uma música")
-    public Music update(@PathVariable("id") int id, @RequestBody Music newMusic){
+    public Music update(@PathVariable("id") Integer id, @RequestBody Music newMusic){
 
         return musicCollection.update(id, newMusic);
     }

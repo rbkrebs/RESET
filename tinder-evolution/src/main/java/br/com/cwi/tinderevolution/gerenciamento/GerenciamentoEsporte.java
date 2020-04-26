@@ -43,6 +43,8 @@ public class GerenciamentoEsporte {
     }
 
 
+    public Sport findById(Integer idSport) {
 
-
+        return this.sportCollection.findById(idSport);
+    }
 }

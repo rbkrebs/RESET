@@ -16,32 +16,32 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class RestUser  {
 
-    UserCollection userCollection = new UserCollection();
-    GerenciamentoUsuario gerenciamentoUsuario = new GerenciamentoUsuario();
+
+    GerenciamentoUsuario gerenciamento = new GerenciamentoUsuario();
 
     @GetMapping("{id}")
-    public Users findById(@PathVariable("id") int id){
+    public Users findById(@PathVariable("id") Integer id){
 
 
-        return this.userCollection.findById(id);
+        return this.gerenciamento.findById(id);
     }
 
     @GetMapping
     public List<Users> findAll(){
 
-        return this.userCollection.listAll();
+        return this.gerenciamento.listAll();
     }
 
     @PutMapping("{id}")
-    public Users update(@PathVariable("id") int id, @RequestBody Users newUser){
+    public Users update(@PathVariable("id") Integer id, @RequestBody Users newUser){
 
-        return userCollection.update(id, newUser);
+        return gerenciamento.update(id, newUser);
     }
 
     @PostMapping
     public Users create(@Validated @RequestBody Users newUser) {
 
-        return this.gerenciamentoUsuario.save(newUser);
+        return this.gerenciamento.save(newUser);
 
     }
 }

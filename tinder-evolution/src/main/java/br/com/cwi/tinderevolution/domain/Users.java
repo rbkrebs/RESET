@@ -3,6 +3,7 @@ package br.com.cwi.tinderevolution.domain;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Users {
 
@@ -23,6 +24,16 @@ public class Users {
     private double latitude;
     @NotNull(message = "o campo longitude é obrigatório")
     private double longitude;
+
+    private ArrayList<Music> musicasCurtidas = new ArrayList<>();
+    private ArrayList<Film> filmesCurtidos = new ArrayList<>();
+    private ArrayList<Series> seriesCurtidas = new ArrayList<>();
+    private ArrayList<Game> jogosCurtidos = new ArrayList<>();
+    private ArrayList<Sport> esportesCurtidos = new ArrayList<>();
+    private ArrayList<Curiosity> curiosidades = new ArrayList<>();
+
+
+    private String urlPicture;
 
     public int getId() {
         return id;
@@ -88,6 +99,62 @@ public class Users {
         this.longitude = longitude;
     }
 
+    public String getUrlPicture() {
+        return urlPicture;
+    }
+
+    public void setUrlPicture(String urlPicture) {
+        this.urlPicture = urlPicture;
+    }
+
+    public ArrayList<Music> getMusicasCurtidas() {
+        return musicasCurtidas;
+    }
+
+    public void setMusicasCurtidas(Music musicasCurtidas) {
+        this.musicasCurtidas.add(musicasCurtidas);
+    }
+
+    public ArrayList<Film> getFilmesCurtidos() {
+        return filmesCurtidos;
+    }
+
+    public void setFilmesCurtidos(Film filmesCurtidos) {
+        this.filmesCurtidos.add(filmesCurtidos);
+    }
+
+    public ArrayList<Series> getSeriesCurtidas() {
+        return seriesCurtidas;
+    }
+
+    public void setSeriesCurtidas(Series seriesCurtidas) {
+        this.seriesCurtidas.add(seriesCurtidas);
+    }
+
+    public ArrayList<Game> getJogosCurtidos() {
+        return jogosCurtidos;
+    }
+
+    public void setJogosCurtidos(Game jogosCurtidos) {
+        this.jogosCurtidos.add(jogosCurtidos);
+    }
+
+    public ArrayList<Sport> getEsportesCurtidos() {
+        return esportesCurtidos;
+    }
+
+    public void setEsportesCurtidos(Sport esportesCurtidos) {
+        this.esportesCurtidos.add(esportesCurtidos);
+    }
+
+    public ArrayList<Curiosity> getCuriosidades() {
+        return curiosidades;
+    }
+
+    public void setCuriosidades(Curiosity curiosidades) {
+        this.curiosidades.add(curiosidades);
+    }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -99,6 +166,13 @@ public class Users {
                 ", bio='" + bio + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
+                ", musicasCurtidas=" + musicasCurtidas +
+                ", filmesCurtidos=" + filmesCurtidos +
+                ", seriesCurtidas=" + seriesCurtidas +
+                ", jogosCurtidos=" + jogosCurtidos +
+                ", esportesCurtidos=" + esportesCurtidos +
+                ", curiosidades=" + curiosidades +
+                ", urlPicture='" + urlPicture + '\'' +
                 '}';
     }
 }

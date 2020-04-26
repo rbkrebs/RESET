@@ -73,4 +73,9 @@ public class GerenciamentoGame {
 
 
     }
+
+    public Game findById(Integer idGame) {
+
+        return this.gameCollection.findById(idGame);
+    }
 }

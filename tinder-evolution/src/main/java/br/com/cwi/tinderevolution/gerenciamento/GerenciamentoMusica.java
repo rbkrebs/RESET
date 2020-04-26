@@ -65,4 +65,8 @@ public class GerenciamentoMusica {
     }
 
 
+    public Music findById(Integer idMusica) {
+
+        return this.musicCollection.findById(idMusica);
+    }
 }

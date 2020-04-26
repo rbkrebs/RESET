@@ -19,7 +19,7 @@ public class RestSport {
     GerenciamentoEsporte gerenciamentoSport = new GerenciamentoEsporte();
 
     @GetMapping("{id}")
-    public Sport findById(@PathVariable("id") int id) {
+    public Sport findById(@PathVariable("id") Integer id) {
 
 
         return this.sportCollection.findById(id);
@@ -32,7 +32,7 @@ public class RestSport {
     }
 
     @PutMapping("{id}")
-    public Sport update(@PathVariable("id") int id, @RequestBody Sport newSport) {
+    public Sport update(@PathVariable("id") Integer id, @RequestBody Sport newSport) {
 
         return sportCollection.update(id, newSport);
     }

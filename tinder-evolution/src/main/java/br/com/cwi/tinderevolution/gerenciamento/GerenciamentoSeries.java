@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Optional;
 
-public class GerenciadorSeries {
+public class GerenciamentoSeries {
 
     SeriesCollection seriesCollection = new SeriesCollection();
 
@@ -72,6 +72,11 @@ public class GerenciadorSeries {
         throw new IllegalArgumentException("Número de episódios insuficiente");
 
 
+    }
+
+    public Series findById(Integer idSeries) {
+
+        return this.seriesCollection.findById(idSeries);
     }
 /*
 

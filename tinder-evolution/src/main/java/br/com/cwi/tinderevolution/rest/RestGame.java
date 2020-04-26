@@ -20,7 +20,7 @@ public class RestGame {
     GerenciamentoGame gerenciamentoGame = new GerenciamentoGame();
 
     @GetMapping("{id}")
-    public Game findById(@PathVariable("id") int id) {
+    public Game findById(@PathVariable("id") Integer id) {
 
 
         return this.gameCollection.findById(id);
@@ -33,7 +33,7 @@ public class RestGame {
     }
 
     @PutMapping("{id}")
-    public Game update(@PathVariable("id") int id, @RequestBody Game newGame) {
+    public Game update(@PathVariable("id") Integer id, @RequestBody Game newGame) {
 
         return gameCollection.update(id, newGame);
     }

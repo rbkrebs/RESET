@@ -5,6 +5,7 @@ import br.com.cwi.tinderevolution.domain.Users;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 import java.util.Optional;
 
 public class GerenciamentoUsuario {
@@ -52,4 +53,18 @@ public class GerenciamentoUsuario {
     }
 
 
+    public Users findById(Integer id) {
+
+        return this.userCollection.findById(id);
+    }
+
+    public List<Users> listAll() {
+
+        return this.userCollection.listAll();
+    }
+
+    public Users update(Integer id, Users newUser) {
+
+        return this.userCollection.update(id,newUser);
+    }
 }
