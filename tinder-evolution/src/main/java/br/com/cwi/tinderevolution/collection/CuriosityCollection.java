@@ -1,6 +1,8 @@
 package br.com.cwi.tinderevolution.collection;
 
 import br.com.cwi.tinderevolution.domain.Curiosity;
+import br.com.cwi.tinderevolution.domain.Film;
+import io.swagger.models.auth.In;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +37,16 @@ public class CuriosityCollection {
     }
 
 
-    public boolean delete(int id) {
-        return false;
-    }
+    public boolean delete(Integer id) {
+
+
+            Curiosity toDelete = this.findById(id);
+
+            if (!toDelete.equals(null)){
+                return listCuriosity.remove(toDelete);
+            }
+            return false;
+        }
 
 
     public Curiosity update(int id, Curiosity newCuriosity){

@@ -3,10 +3,12 @@ package br.com.cwi.tinderevolution.gerenciamento;
 import br.com.cwi.tinderevolution.collection.FilmCollection;
 import br.com.cwi.tinderevolution.domain.Film;
 import br.com.cwi.tinderevolution.domain.enums.Category;
+import io.swagger.models.auth.In;
 
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 import java.util.Optional;
 
 public class GerenciamentoFilme {
@@ -22,6 +24,27 @@ public class GerenciamentoFilme {
 
         return null;
 
+    }
+
+    public List<Film> listAll(){
+
+        return this.filmCollection.listAll();
+
+    }
+
+    public Film findById(Integer id){
+
+        return this.filmCollection.findById(id);
+    }
+
+    public Film update(Integer id, Film newFilm){
+
+        return this.filmCollection.update(id, newFilm);
+    }
+
+    public Boolean delete(Integer id){
+
+        return this.filmCollection.delete(id);
     }
 
     public boolean verificaRegistroDuplicado(Film filmParam) {

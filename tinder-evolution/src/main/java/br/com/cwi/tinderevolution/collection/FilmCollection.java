@@ -4,6 +4,7 @@ import br.com.cwi.tinderevolution.domain.Film;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class FilmCollection {
 
@@ -23,7 +24,7 @@ public class FilmCollection {
     }
 
 
-    public Film findById(int id) {
+    public Film findById(Integer id) {
 
 
         return this.listFilm.stream().filter(film-> film.getId() == id).findFirst().get();
@@ -39,12 +40,18 @@ public class FilmCollection {
     }
 
 
-    public boolean delete(int id) {
+    public boolean delete(Integer id) {
+
+        Film toDelete = this.findById(id);
+
+        if (!toDelete.equals(null)){
+            return listFilm.remove(toDelete);
+        }
         return false;
     }
 
 
-    public Film update(int id, Film newFilm){
+    public Film update(Integer id, Film newFilm){
 
 
         Film film = findById(id);

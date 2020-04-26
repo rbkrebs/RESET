@@ -4,6 +4,7 @@ import br.com.cwi.tinderevolution.collection.UserCollection;
 
 import br.com.cwi.tinderevolution.domain.Users;
 import br.com.cwi.tinderevolution.gerenciamento.GerenciamentoUsuario;
+import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@Api(value="API REST User")
+@CrossOrigin(origins = "*")
 public class RestUser  {
 
     UserCollection userCollection = new UserCollection();

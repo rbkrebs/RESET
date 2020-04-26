@@ -4,6 +4,7 @@ package br.com.cwi.tinderevolution.rest;
 import br.com.cwi.tinderevolution.collection.GameCollection;
 import br.com.cwi.tinderevolution.domain.Game;
 import br.com.cwi.tinderevolution.gerenciamento.GerenciamentoGame;
+import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/game")
+@Api(value="API REST Game")
+@CrossOrigin(origins = "*")
 public class RestGame {
 
     GameCollection gameCollection = new GameCollection();

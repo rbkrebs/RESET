@@ -3,6 +3,7 @@ package br.com.cwi.tinderevolution.rest;
 import br.com.cwi.tinderevolution.collection.SportCollection;
 import br.com.cwi.tinderevolution.domain.Sport;
 import br.com.cwi.tinderevolution.gerenciamento.GerenciamentoEsporte;
+import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sport")
+@Api(value="API REST Sport")
+@CrossOrigin(origins = "*")
 public class RestSport {
 
     SportCollection sportCollection = new SportCollection();
