@@ -43,7 +43,39 @@ public class RestLikes {
     @ApiOperation(value = "Gera um registro de like para um usuário de determinado esporte")
     public Boolean likeSport(@PathVariable("id-sport") Integer idSport, @PathVariable("id-user") Integer idUser) {
 
-        return this.gerenciamento.likeSeries(idSport, idUser);
+        return this.gerenciamento.likeSport(idSport, idUser);
+
+    }
+
+    @DeleteMapping("musica/{id-music}/avaliador/{id-user}")
+    @ApiOperation(value = "Deleta um registro de like para um usuário de determinada música")
+    public Boolean dislikeMusic(@PathVariable("id-music") Integer idMusica, @PathVariable("id-user") Integer idUser) {
+
+        return this.gerenciamento.dislikeMusic(idMusica, idUser);
+
+    }
+
+    @DeleteMapping("filme/{id-film}/avaliador/{id-user}")
+    @ApiOperation(value = "Deleta um registro de like para um usuário de determinada filme")
+    public Boolean dislikeFilm(@PathVariable("id-filme") Integer idFilm, @PathVariable("id-user") Integer idUser) {
+
+        return this.gerenciamento.dislikeFilm(idFilm, idUser);
+
+    }
+
+    @DeleteMapping("series/{id-series}/avaliador/{id-user}")
+    @ApiOperation(value = "Deleta um registro de like para um usuário de determinado filme")
+    public Boolean dislikeSeries(@PathVariable("id-series") Integer idSeries, @PathVariable("id-user") Integer idUser) {
+
+        return this.gerenciamento.dislikeSeries(idSeries, idUser);
+
+    }
+
+    @DeleteMapping("sport/{id-sport}/avaliador/{id-user}")
+    @ApiOperation(value = "Deleta um registro de like para um usuário de determinado esporte")
+    public Boolean dislikeSport(@PathVariable("id-sport") Integer idSport, @PathVariable("id-user") Integer idUser) {
+
+        return this.gerenciamento.dislikeSport(idSport, idUser);
 
     }
 }

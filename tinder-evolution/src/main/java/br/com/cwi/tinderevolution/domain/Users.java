@@ -31,6 +31,8 @@ public class Users {
     private ArrayList<Game> jogosCurtidos = new ArrayList<>();
     private ArrayList<Sport> esportesCurtidos = new ArrayList<>();
     private ArrayList<Curiosity> curiosidades = new ArrayList<>();
+    private ArrayList<Users> likes = new ArrayList<>();
+    private ArrayList<Users> dislikes = new ArrayList<>();
 
 
     private String urlPicture;
@@ -153,6 +155,22 @@ public class Users {
 
     public void setCuriosidades(Curiosity curiosidades) {
         this.curiosidades.add(curiosidades);
+    }
+
+    public ArrayList<Users> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Users likes) {
+        this.likes.add(likes);
+    }
+
+    public ArrayList<Users> getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(Users dislikes) {
+        this.dislikes.add(dislikes);
     }
 
     @Override

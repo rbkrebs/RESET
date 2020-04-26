@@ -54,4 +54,16 @@ public class UserCollection {
         user.setPhone(newUsers.getPhone());
         return user;
     }
+
+    public void like(Integer idEvaluated, Integer idEvaluator){
+
+        this.findById(idEvaluator).setLikes(this.findById(idEvaluated));
+
+    }
+
+    public void disLike(Integer idEvaluated, Integer idEvaluator){
+
+        this.findById(idEvaluator).setDislikes(this.findById(idEvaluated));
+
+    }
 }

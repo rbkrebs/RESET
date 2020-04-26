@@ -67,4 +67,22 @@ public class GerenciamentoUsuario {
 
         return this.userCollection.update(id,newUser);
     }
+
+   public void like(Integer idEvaluated, Integer idEvaluator){
+
+        this.userCollection.like(idEvaluated, idEvaluator);
+
+    }
+
+    public void disLike(Integer idEvaluated, Integer idEvaluator){
+
+        this.userCollection.disLike(idEvaluated, idEvaluator);
+
+    }
+
+    public void delLike(Integer idEvaluated, Integer idEvaluator) {
+    }
+
+    public void DelDislike(Integer idEvaluated, Integer idEvaluator) {
+    }
 }

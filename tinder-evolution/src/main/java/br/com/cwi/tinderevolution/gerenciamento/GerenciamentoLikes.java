@@ -36,9 +36,10 @@ public class GerenciamentoLikes {
     public Boolean likeFilm(Integer idFilm, Integer idUser) {
 
         try {
-            Film likedFilm = filmList.findById(idFilm);
-            Users evaluator = userList.findById(idUser);
-            evaluator.setFilmesCurtidos(likedFilm);
+
+            userList.findById(idUser)
+                    .setFilmesCurtidos(
+                            filmList.findById(idFilm));
             return true;
         }
         catch (NullPointerException e){
@@ -50,8 +51,10 @@ public class GerenciamentoLikes {
     public Boolean likeSeries(Integer idSeries, Integer idUser) {
 
         try {
-            Series likedSeries = seriesList.findById(idSeries);
-            userList.findById(idUser).setSeriesCurtidas(likedSeries);
+
+            userList.findById(idUser)
+                    .setSeriesCurtidas(
+                            seriesList.findById(idSeries));
             return true;
         }
         catch (NullPointerException e){
@@ -64,8 +67,9 @@ public class GerenciamentoLikes {
 
         try {
 
-            Game likedGame = gameList.findById(idGame);
-            userList.findById(idUser).setJogosCurtidos(likedGame);
+            userList.findById(idUser)
+                    .setJogosCurtidos(
+                            gameList.findById(idGame));
             return true;
         }
         catch (NullPointerException e){
@@ -77,13 +81,69 @@ public class GerenciamentoLikes {
 
         try {
 
-            Sport likedSport = sportList.findById(idSport);
-            userList.findById(idUser).setEsportesCurtidos(likedSport);
+
+            userList.findById(idUser)
+                    .setEsportesCurtidos(
+                            sportList.findById(idSport));
             return true;
         }
         catch (NullPointerException e){
             return false;
         }
 
+    }
+
+    public Boolean dislikeMusic(Integer idMusic, Integer idUser) {
+
+        try {
+            userList.findById(idUser)
+                    .getMusicasCurtidas().remove(
+                            musicList.findById(idMusic));
+            return true;
+        }
+        catch (NullPointerException e){
+            return false;
+        }
+
+
+    }
+
+    public Boolean dislikeFilm(Integer idFilm, Integer idUser) {
+
+        try {
+            userList.findById(idUser)
+                    .getFilmesCurtidos().remove(
+                    filmList.findById(idFilm));
+            return true;
+        }
+        catch (NullPointerException e){
+            return false;
+        }
+    }
+
+    public Boolean dislikeSeries(Integer idSeries, Integer idUser) {
+
+        try {
+            userList.findById(idUser)
+                    .getSeriesCurtidas().remove(
+                    seriesList.findById(idSeries));
+            return true;
+        }
+        catch (NullPointerException e){
+            return false;
+        }
+    }
+
+    public Boolean dislikeSport(Integer idSport, Integer idUser) {
+
+        try {
+            userList.findById(idUser)
+                    .getEsportesCurtidos().remove(
+                    sportList.findById(idSport));
+            return true;
+        }
+        catch (NullPointerException e){
+            return false;
+        }
     }
 }
