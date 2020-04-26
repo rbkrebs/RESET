@@ -13,15 +13,30 @@ public class MatchCollection {
     private static final List<Match> listMatches = new ArrayList<>();
 
     UserCollection userCollection = new UserCollection();
+    Match match = new Match();
 
 
     public Match findById(Integer id) {
 
         Users user = userCollection.findById(id);
 
-        Match matchById = listMatches.stream().filter(match -> match.getListMacthes().containsKey(user)).findFirst().get();
+        listMatches.contains(user);
 
-        return matchById;
+        return null;
 
     }
+
+    public void saveMatch(Integer Evaluator){
+
+        Users user = userCollection.findById(Evaluator);
+        for (Users users : this.userCollection.listAll()) {
+            if(users.getLikes().contains(user)){
+             
+            }
+        }
+
+
+    }
+
+
 }

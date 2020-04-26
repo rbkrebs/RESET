@@ -46,7 +46,7 @@ public class GerenciamentoMatches {
     public Boolean delDislike(Integer idEvaluated, Integer idEvaluator) {
 
         try{
-            this.gerenciamentoUsuario.DelDislike(idEvaluated, idEvaluator);
+            this.gerenciamentoUsuario.delDislike(idEvaluated, idEvaluator);
             return true;
         }catch (Exception e){
             return false;
@@ -59,4 +59,6 @@ public class GerenciamentoMatches {
 
 
     }
+
+
 }

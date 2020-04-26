@@ -81,8 +81,13 @@ public class GerenciamentoUsuario {
     }
 
     public void delLike(Integer idEvaluated, Integer idEvaluator) {
+
+        this.userCollection.delLike(idEvaluated, idEvaluator);
     }
 
-    public void DelDislike(Integer idEvaluated, Integer idEvaluator) {
+    public void delDislike(Integer idEvaluated, Integer idEvaluator) {
+
+        this.userCollection.delDisLike(idEvaluated, idEvaluator);
+
     }
 }

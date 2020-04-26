@@ -6,14 +6,22 @@ import java.util.Map;
 public class Match {
 
 
+    private Users evaluated;
+    private Users evaluator;
 
-    private Map<Users,ArrayList<Users>> listMatches;
-
-    public Map<Users, ArrayList<Users>> getListMacthes() {
-        return listMatches;
+    public Users getEvaluated() {
+        return evaluated;
     }
 
-    public void setListMacthes(Map<Users, ArrayList<Users>> listMacthes) {
-        this.listMatches = listMacthes;
+    public void setEvaluated(Users evaluated) {
+        this.evaluated = evaluated;
+    }
+
+    public Users getEvaluator() {
+        return evaluator;
+    }
+
+    public void setEvaluator(Users evaluator) {
+        this.evaluator = evaluator;
     }
 }

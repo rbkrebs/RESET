@@ -66,4 +66,15 @@ public class UserCollection {
         this.findById(idEvaluator).setDislikes(this.findById(idEvaluated));
 
     }
+
+    public void delDisLike(Integer idEvaluated, Integer idEvaluator) {
+
+        this.findById(idEvaluator).getDislikes().remove(this.findById(idEvaluated));
+    }
+
+    public void delLike(Integer idEvaluated, Integer idEvaluator) {
+
+        this.findById(idEvaluator).getLikes().remove(this.findById(idEvaluated));
+
+    }
 }
